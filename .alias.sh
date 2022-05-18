@@ -1,4 +1,4 @@
-alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
+# alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
 alias e='mvim'
 alias ea='e ~/.alias.sh'
 alias vc='e ~/.vimrc'

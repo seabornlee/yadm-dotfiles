@@ -38,12 +38,9 @@ alias grc='git rebase --continue'
 alias ghv='gh repo view --web'
 alias gmm='git merge master'
 
-alias bi='bundle install'
-
 alias rort='RAILS_ENV=test bundle exec'
 
 alias nig='npm install -g'
-alias bis='bower install -S'
 
 alias yoad='yo angular:directive '
 
@@ -76,6 +73,7 @@ alias ut='be rake spec:unit'
 # Homebrew
 alias bs='brew search'
 alias bi='HOMEBREW_NO_AUTO_UPDATE=1 brew install'
+alias bic='bi --cask'
 alias bu='ALL_PROXY=127.0.0.1:8001 brew update'
 alias cs='brew cask search'
 alias ci='brew cask install'
@@ -117,3 +115,4 @@ alias cb='cargo build'
 alias asit='adb shell input text'
 
 alias v='glow'
+alias ghpr='gh pr view -w'

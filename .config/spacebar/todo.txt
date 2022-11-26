@@ -1,1 +1,1 @@
-Avoid install NDK and Android 32
+prettier Node

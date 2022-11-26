@@ -52,8 +52,8 @@
       Plug 'Galooshi/vim-import-js'
       " Plug 'chemzqm/wxapp.vim'
       " Plug 'prettier/vim-prettier'
-      " Plug 'janko/vim-test'
-      Plug 'codingstyle-cn/vim-test'
+      Plug 'janko/vim-test'
+      "Plug 'codingstyle-cn/vim-test'
       Plug 'jhkersul/vim-jest-snippets'
       Plug 'mg979/vim-visual-multi'
       Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -238,7 +238,7 @@
       " jump to end of line in insert mode
       inoremap <C-e> <C-o>$
       " save file in insert mode
-      inoremap <c-s> <esc>:w<CR>
+      inoremap <c-s> <esc>:w!<CR>
       "inoremap <leader>; <C-o>A;<CR>
       autocmd FileType javascript,css,php nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
       autocmd FileType javascript,css,php imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
@@ -722,16 +722,21 @@
     " Under the Mac(MacVim)
     if has("gui_macvim")
       set macligatures
-      " set guifont=Fira\ Code:h24
-      set guifont=DroidSansMono\ Nerd\ Font:h18
+      "set guifont=Cutive\ Mono:h24
+      "set guifont=Fira\ Code\ Light:h24
+      set guifont=Victor\ Mono\ ExtraLight:h28
+      "set guifont=DroidSansMono\ Nerd\ Font\ Mono:h28
+      "set guifontwide=Hiragino\ Sans\ GB
+      set linespace=5
       "remove toolbar
       set guioptions-=T
       " remove scrollbars
       set guioptions-=L
       set guioptions-=r
       set guioptions+=c
+      let g:Lf_ShowDevIcons = 0
 
-      " set fullscreen fullscreen
+      set fullscreen fullscreen
     endif
 
     if has("nvim")

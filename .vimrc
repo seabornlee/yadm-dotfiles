@@ -691,7 +691,7 @@
 
       let g:test#javascript#runner = 'hlj'
 
-      nnoremap <c-b> :CocCommand explorer<CR>
+      nnoremap <c-b> :CocCommand explorer --reveal-when-open<CR>
 
       map <leader>dm :Goyo<CR>
 
@@ -720,6 +720,7 @@
     " {{{
     " Under the Mac(MacVim)
     if has("gui_macvim")
+      set shortmess+=F
       set macligatures
       "set guifont=Cutive\ Mono:h24
       "set guifont=Fira\ Code\ Light:h24

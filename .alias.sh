@@ -120,3 +120,8 @@ alias asit='adb shell input text'
 alias v='glow'
 alias ghpr='gh pr view -w'
 alias t='z'
+
+alias asc='adb shell screencap -p /sdcard/screenshot.png && adb pull /sdcard/screenshot.png ~/Downloads/ && open ~/Downloads/screenshot.png'
+alias pip='pip3'
+alias python='python3'
+alias gh2of='npx @mikerhodes/github-to-omnifocus sync'

@@ -57,7 +57,6 @@
       Plug 'mg979/vim-visual-multi'
       Plug 'neoclide/coc.nvim', {'branch': 'release'}
       Plug 'briancollins/vim-jst'
-      " Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
       "Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
       Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
       Plug 'luchermitte/vim-refactor'
@@ -580,61 +579,6 @@
       nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
       " Resume latest coc list.
       nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-      " Phpactor
-      " Include use statement
-      nmap <Space>pu :call phpactor#UseAdd()<CR>
-
-      let g:phpactorInputListStrategy = 'phpactor#input#list#fzf'
-      let g:phpactorQuickfixStrategy = 'phpactor#quickfix#fzf'
-
-      " Invoke the context menu
-      nmap <Leader>r :call phpactor#ContextMenu()<CR>
-
-      " Invoke the navigation menu
-      nmap <>b :call phpactor#Navigate()<CR>
-
-      " Goto definition of class or class member under the cursor
-      nmap <Space>pgd :call phpactor#GotoDefinition()<CR>
-      nmap <Space>pgdh :call phpactor#GotoDefinitionHsplit()<CR>
-      nmap <Space>pgdv :call phpactor#GotoDefinitionVsplit()<CR>
-      nmap <Space>pgdt :call phpactor#GotoDefinitionTab()<CR>
-
-      " Show brief information about the symbol under the cursor
-      nmap <Space>pK :call phpactor#Hover()<CR>
-
-      " Transform the classes in the current file
-      nmap <Space>pt :call phpactor#Transform()<CR>
-
-      " Import all missing classes in the current file
-      "nmap <Space>pim :call phpactor#ImportMissingClasses()<CR>
-
-      " Expand the class name from unqualified name to fully qualified name
-      nmap <Space>pec :call phpactor#ClassExpand()<CR>
-
-      " Class Move
-      nmap <Space>pmf :call phpactor#MoveFile()<CR>
-
-      " Generate a new class (replacing the current file)
-      nmap <leader>c :call phpactor#ClassNew()<CR>
-
-      " Extract expression (normal mode)
-      nmap <silent><leader>v :call phpactor#ExtractExpression(v:false)<CR>
-
-      " Extract expression from selection
-      vmap dsilent><leader>vv :<C-U>call phpactor#ExtractExpression(v:true)<CR>
-
-      " Extract method from selection
-      vmap <silent><leader>m :<C-U>call phpactor#ExtractMethod()<CR>
-
-      " Copy an existing class to another location updating its name and namespace 
-      nmap <Space>pcf :call phpactor#CopyFile()<CR>
-
-      " Change visibility
-      nmap <Space>pcv :call phpactor#ChangeVisibility()<CR>
-
-      "Generate accessor
-      nmap <Space>pga :call phpactor#GenerateAccessor()<CR>
 
       " LeaderF
       let g:Lf_WindowPosition = 'popup'

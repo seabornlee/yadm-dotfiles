@@ -51,15 +51,13 @@
       " Plug 'epilande/vim-react-snippets'
       Plug 'Galooshi/vim-import-js'
       " Plug 'chemzqm/wxapp.vim'
-      " Plug 'prettier/vim-prettier'
+      Plug 'prettier/vim-prettier'
       Plug 'janko/vim-test'
-      "Plug 'codingstyle-cn/vim-test'
       Plug 'jhkersul/vim-jest-snippets'
       Plug 'mg979/vim-visual-multi'
       Plug 'neoclide/coc.nvim', {'branch': 'release'}
       Plug 'briancollins/vim-jst'
-      Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
-      Plug 'justinmk/vim-sneak'
+      " Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
       "Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
       Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
       Plug 'luchermitte/vim-refactor'
@@ -82,7 +80,8 @@
       Plug 'Konfekt/FastFold'
       Plug 'rakr/vim-one'
       Plug 'sgur/vim-textobj-parameter'
-
+      Plug 'tomlion/vim-solidity'
+      Plug 'github/copilot.vim'
 
       call plug#end()            " required
   " }}}

@@ -6,63 +6,37 @@
 
       call plug#begin()
 
-      "Plug 'dense-analysis/ale'
-      "Plug 'scrooloose/nerdtree'
       Plug 'scrooloose/nerdcommenter'
-      Plug 'jistr/vim-nerdtree-tabs'
-      Plug 'Xuyuanp/nerdtree-git-plugin'
       Plug 'mattn/emmet-vim'
-      " Plug 'ybian/smartim'
       Plug 'scrooloose/syntastic'
-      " Plug 'MarcWeber/vim-addon-mw-utils'
       Plug 'tpope/vim-commentary'
-      " Plug 'tpope/vim-endwise'
       Plug 'tpope/vim-surround'
-      " Plug 'tpope/vim-fugitive'
       Plug 'itchyny/lightline.vim'
       Plug 'jiangmiao/auto-pairs'
       Plug 'elzr/vim-json'
-      " Plug 'rking/ag.vim'
       Plug 'pangloss/vim-javascript'
-      " Plug 'tpope/vim-haml'
-      " Plug 'tpope/vim-cucumber'
-      " Plug 'majutsushi/tagbar'
       Plug 'vim-scripts/matchit.zip'
       Plug 'terryma/vim-expand-region'
-      " Plug 'nathanaelkane/vim-indent-guides'
       Plug 'kana/vim-textobj-user'
-      " Plug 'austintaylor/vim-indentobject'
       Plug 'lucapette/vim-textobj-underscore'
-      " Plug 'tpope/vim-dispatch'
-      " Plug 'mxw/vim-jsx'
-      " Plug 'tomtom/tlib_vim'
       Plug 'SirVer/ultisnips'
       Plug 'honza/vim-snippets'
-      " Plug 'kien/ctrlp.vim'
-      " Plug 'AndrewRadev/splitjoin.vim'
-      " Plug 'nikvdp/ejs-syntax'
-      " Plug 'godlygeek/tabular'
       Plug 'tpope/vim-repeat'
       Plug 'lfilho/cosco.vim' " Auto append semicolon or Comma
       Plug 'dracula/vim'
       Plug 'leafgarland/typescript-vim'
       Plug 'ianks/vim-tsx'
       Plug 'posva/vim-vue'
-      " Plug 'epilande/vim-react-snippets'
       Plug 'Galooshi/vim-import-js'
-      " Plug 'chemzqm/wxapp.vim'
       Plug 'prettier/vim-prettier'
       Plug 'janko/vim-test'
       Plug 'jhkersul/vim-jest-snippets'
       Plug 'mg979/vim-visual-multi'
       Plug 'neoclide/coc.nvim', {'branch': 'release'}
       Plug 'briancollins/vim-jst'
-      "Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
       Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-      Plug 'luchermitte/vim-refactor'
       Plug 'ryanoasis/vim-devicons'
       Plug 'seabornlee/terminal.vim'
-      " Plug 'ludovicchabant/vim-gutentags'
       Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
       Plug 'rust-lang/rust.vim'
       Plug 'cespare/vim-toml'
@@ -81,6 +55,7 @@
       Plug 'sgur/vim-textobj-parameter'
       Plug 'tomlion/vim-solidity'
       Plug 'github/copilot.vim'
+      Plug 'ferrine/md-img-paste.vim'
 
       call plug#end()            " required
   " }}}
@@ -237,7 +212,7 @@
       inoremap <C-e> <C-o>$
       " save file in insert mode
       inoremap <c-s> <esc>:w!<CR>
-      "inoremap <leader>; <C-o>A;<CR>
+      " inoremap <leader>; <C-o>A;<CR>
       autocmd FileType javascript,css,php nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
       autocmd FileType javascript,css,php imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 
@@ -358,8 +333,8 @@
       " }}}
 
       " supertab {{{
-      let g:SuperTabDefaultCompletionType = 'context'
-      let g:SuperTabContextDefaultCompletionType = '<c-n>'
+      " let g:SuperTabDefaultCompletionType = 'context'
+      " let g:SuperTabContextDefaultCompletionType = '<c-n>'
       " }}}
 
       " syntastic {{{
@@ -371,7 +346,8 @@
       " }}}
 
       " vim-test {{{
-      let test#strategy = "vimterminal"
+      let $NODE_ENV = 'test'
+      let test#strategy = "vimux"
       nnoremap <leader>t :call SaveModifiedFiles()<cr>:TestNearest<CR>
       nnoremap <leader>tf :call SaveModifiedFiles()<CR>:TestFile<CR>
       nnoremap <leader>s :call SaveModifiedFiles()<CR>:TestSuite<CR>
@@ -443,7 +419,7 @@
       " nmap <Leader>ta :TagbarToggle<CR>
 
       " let g:UltiSnipsExpandTrigger="<tab>"
-      let g:UltiSnipsJumpForwardTrigger="<tab>"
+      let g:UltiSnipsJumpForwardTrigger="<c-n>"
       let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
       " let g:deoplete#enable_at_startup = 1
@@ -545,8 +521,8 @@
       " Use <TAB> for selections ranges.
       " NOTE: Requires 'textDocument/selectionRange' support from the language server.
       " coc-tsserver, coc-python are the examples of servers that support it.
-      nmap <silent> <TAB> <Plug>(coc-range-select)
-      xmap <silent> <TAB> <Plug>(coc-range-select)
+      " nmap <silent> <TAB> <Plug>(coc-range-select)
+      " xmap <silent> <TAB> <Plug>(coc-range-select)
 
       " Add `:Format` command to format current buffer.
       command! -nargs=0 Format :call CocAction('format')
@@ -587,7 +563,7 @@
       let g:Lf_DevIconsFont = "DroidSansMono Nerd Font Mono"
       let g:Lf_ShortcutF = '<C-P>'
       "https://jdhao.github.io/2020/08/26/leaderf_nvim_settings/
-      let g:Lf_WorkingDirectoryMode = 'a'
+      let g:Lf_WorkingDirectoryMode = 'FA'
       let g:Lf_UseMemoryCache = 0
 
       nnoremap <silent> <c-e> :<C-u>Leaderf mru<CR>
@@ -595,9 +571,9 @@
       map <C-.> <Plug>(expand_region_expand)
       map <C-t> <Plug>(expand_region_shrink)
 
-      " let g:prettier#autoformat = 1
-      " let g:prettier#autoformat_require_pragma = 0
-      " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.php PrettierAsync
+      let g:prettier#autoformat = 1
+      let g:prettier#autoformat_require_pragma = 0
+      autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.php PrettierAsync
 
       nmap <Leader>tt :TermvimRightOpen<CR>
 
@@ -633,7 +609,7 @@
 
       tnoremap <Esc> <C-\><C-n>
 
-      let g:test#javascript#runner = 'hlj'
+      let g:test#javascript#runner = 'mocha'
 
       nnoremap <c-b> :CocCommand explorer --reveal-when-open<CR>
 
@@ -657,8 +633,17 @@
       " let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
       " set <a-cr>=^[^M
       nnoremap <a-cr> :CocAction<CR>
+      nnoremap <leader>s :Copilot panel<CR>
 
       let g:airline_theme='one'
+
+      "paste image into markdown
+      autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+      let g:mdip_imgdir_absolute = '/Users/seabornlee/Documents/code/brand/cards/_image/'
+      let g:mdip_imgdir_intext = '/_image'
+
+      " goto test file
+      nnoremap <Leader>gt :A<CR>
 
     " GUI setting
     " {{{

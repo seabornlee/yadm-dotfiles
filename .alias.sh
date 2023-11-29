@@ -1,5 +1,5 @@
 # alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
-alias e='mvim'
+alias e='nvim'
 alias ea='e ~/.alias.sh'
 alias vc='e ~/.vimrc'
 # alias magit='e -c Magit'

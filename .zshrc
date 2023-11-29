@@ -1,7 +1,5 @@
 source ~/.alias.sh
 
-eval $(thefuck --alias)
-
 export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk

@@ -1,0 +1,6 @@
+return {
+  "tpope/vim-projectionist",
+  keys = {
+    { "<leader>tt","<cmd>:A<cr>", desc = "Goto test file" } 
+  },
+}
